@@ -49,7 +49,9 @@ class Passwordsq(db.Model):
     password = db.Column(db.String(250), nullable=False)
     date = db.Column(db.String(250), nullable=False)
     owner_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-db.create_all()
+
+with app.app_context():
+    db.create_all()
 
 
 #Using WTF Flask Forms
